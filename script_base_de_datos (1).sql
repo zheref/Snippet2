@@ -71,7 +71,7 @@ create table CODIGO
 (
    COD_ID               int			                    identity(1,1) not null,
    SOL_ID               int					            not null,
-   COD_CONTENT          xml			                    not null,
+   COD_CONTENT          nvarchar(4000)                  not null,
    
    constraint PK_CODIGO primary key (COD_ID),
    constraint FK_CODIGO_ES_ENCAPS_SOLUCION foreign key (SOL_ID) references SOLUCION(SOL_ID)
