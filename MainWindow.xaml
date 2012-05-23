@@ -1,0 +1,45 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="Snippet2.MainWindow"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="1300" Height="720" FontFamily="Segoe UI Light" FontSize="14">
+
+	<DockPanel x:Name="LayoutRoot">
+		<Menu Height="25" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI Light" DockPanel.Dock="Top">
+			<MenuItem Header="Archivo">
+				<MenuItem x:Name="mniNuevo" Header="Nuevo" Click="mniNuevo_Click" />
+				<MenuItem Header="Abrir" />
+				<MenuItem Header="Guardar" />
+				<Separator />
+				<MenuItem Header="Cerrar" />
+			</MenuItem>
+		</Menu>
+		<ToolBarTray DockPanel.Dock="Top">
+			<ToolBar Height="30">
+				<Button x:Name="btnNew" Height="30" Width="30" ToolTip="Nuevo Snippet" Padding="3,2">
+					<Image Source="1336713909_FTP.png" Stretch="Uniform"/>
+				</Button>
+				<Separator />
+				<TextBox x:Name="txtKeywordsToSearch" Width="100" Text="Buscar..."></TextBox>
+				<Button x:Name="btnBuscar" Content="Buscar!" Click="btnBuscar_Click" />
+			</ToolBar>
+			<ToolBar Height="30">
+				<Button x:Name="btnCargar" Content="Refrescar" Click="btnCargar_Click" />
+			</ToolBar>
+		</ToolBarTray>
+		<Grid Width="400" DockPanel.Dock="Left" Background="#FF007A2E" x:Name="grdSlider">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="100" />
+			</Grid.RowDefinitions>
+			<Label Content="Categorias" />
+		</Grid>
+		<Grid DockPanel.Dock="Bottom" Height="80">
+			
+		</Grid>
+		<Grid x:Name="grdContainer">
+			<DataGrid AutoGenerateColumns="True" x:Name="dataGridList" />
+		</Grid>
+	</DockPanel><!--LayoutRoot-->
+</Window>

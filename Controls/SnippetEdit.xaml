@@ -1,0 +1,19 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Snippet2.SnippetEdit"
+	x:Name="UserControl"
+	d:DesignWidth="640" Height="192">
+
+	<Grid x:Name="LayoutRoot">
+		<Label Content="Ingrese los datos iniciales del Snippet a postular" Height="32" Margin="8,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="624"/>
+		<Label Content="Nombre" HorizontalAlignment="Left" Margin="8,44,0,0" VerticalAlignment="Top"/>
+		<Label Content="Descripción" HorizontalAlignment="Left" Margin="8,73.96,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="txtName" Margin="104,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="528"/>
+		<TextBox x:Name="txtDescription" Margin="104,75.96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="528" Height="84.04"/>
+		<Button x:Name="btnCommand" Content="Create" HorizontalAlignment="Right" Margin="0,164,8,0" Width="75" VerticalAlignment="Top" Click="btnCommand_Click"/>
+	</Grid>
+</UserControl>
