@@ -96,7 +96,7 @@ values				(N'sqlserver');
 
 -- 25
 insert into KEYWORD (KEY_TAG)
-values				(N'connection string');
+values				(N'connection');
 
 -- 26
 insert into KEYWORD (KEY_TAG)
@@ -178,82 +178,82 @@ VALUES				(
 						N'A'
 					);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (16,1);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (17,1);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (18,1);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (19,1);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (1,2);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (7,2);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (21,3);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (22,3);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (23,4);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (8,5);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (24,6);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (25,6);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (24,7);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (6,7);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (26,7);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (27,7);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (6,8);
 
-insert into KEYWORD_DETAIL (KEY_ID, SNI_ID)
+insert into KEYWORD_DETAIL (KEY_IDD, SNI_ID)
 values				       (20,8);
 
 -- 1
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'GUI', N'Interfaces Gráficas de Usuario');
 
 -- 2
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'Process', N'Procesamiento, hilos, consumo, rendimiento y memoria');
 
 -- 3
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'Algoritmia', N'Todo lo referente a la forma efectiva de solucionar problemas logicos puntuales.');
 
 -- 4
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'Bases de Datos', N'Todo lo referente propiamente a las bases de datos.');
 
 -- 5
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'Redes', N'Todo lo referente a arquitecturas cliente-servidor usando redes intranet e internet con los distintos protocolos existentes.');
 
 -- 6
-insert into CATEGORIA (CAT_NOMB, CAT_DESCRIP)
+insert into CATEGORIA (CAT_NOMBRE, CAT_DESCRIP)
 values      (N'Arreglos de datos', N'Todo lo referente al procesamiento de colecciones y arreglos de datos dentro del lenguaje y con los elementos propios de cada lenguaje.');
 
 insert into CATEGORIA_DETAIL (SNI_ID, CAT_ID)
@@ -439,7 +439,7 @@ values			        (N'WPF', N'http://windowsclient.net/downloads/');
 
 -- 2
 insert into TECNOLOGIA  (TEC_NOMBRE, TEC_SOURCE)
-values			        (N'JSF', N'http://www.oracle.com/technetwork/java/javaee/download-139288.html');
+values			        (N'JSF', N'http://tinyurl.com/8xze3nk');
 
 -- 3
 insert into TECNOLOGIA  (TEC_NOMBRE, TEC_SOURCE)

@@ -1,9 +1,9 @@
 create table KEYWORD 
 (
-   KEY_ID               int			          identity(1,1) not null,
+   KEY_IDD              int			          identity(1,1) not null,
    KEY_TAG              nvarchar(15)          not null,
    
-   constraint PK_KEYWORD primary key (KEY_ID)
+   constraint PK_KEYWORD primary key (KEY_IDD)
 );
 
 create table SNIPPET 
@@ -19,21 +19,22 @@ create table SNIPPET
 
 create table KEYWORD_DETAIL 
 (
-   KEY_ID               int                   not null,
+   KEY_IDD              int                   not null,
    SNI_ID               int                   not null,
    
-   constraint PK_KEYWORD_DETAIL primary key (KEY_ID, SNI_ID),
-   constraint FK_KEYWORD__COINCIDE__KEYWORD foreign key (KEY_ID) references KEYWORD(KEY_ID),
+   constraint PK_KEYWORD_DETAIL primary key (KEY_IDD, SNI_ID),
+   constraint FK_KEYWORD__COINCIDE__KEYWORD foreign key (KEY_IDD) references KEYWORD(KEY_IDD),
    constraint FK_KEYWORD__ES_APLICA_SNIPPET foreign key (SNI_ID) references SNIPPET(SNI_ID)
 );
 
 create table CATEGORIA 
 (
    CAT_ID               int				              identity(1,1) not null,
+   CAT_NOMBRE			nvarchar(20)				  not null,
    CAT_DESCRIP          nvarchar(511)	              null,
    
    constraint PK_CATEGORIA primary key (CAT_ID)
-)
+);
 
 create table CATEGORIA_DETAIL 
 (
@@ -80,8 +81,8 @@ create table CODIGO
 create table TECNOLOGIA 
 (
    TEC_ID               int						         identity(1,1) not null,
-   TEC_NOMBRE           nvarchar(15)                     not null,
-   TEC_SOURCE           nvarchar(15)                     not null,
+   TEC_NOMBRE           nvarchar(20)                     not null,
+   TEC_SOURCE           nvarchar(100)                     not null,
    
    constraint PK_TECNOLOGIA primary key (TEC_ID)
 );
@@ -100,7 +101,7 @@ create table LENGUAJE
 (
    LEN_ID               int						         identity(1,1) not null,
    LEN_NOMBRE           nvarchar(15)                     not null,
-   LEN_ESPEC            nvarchar(50)                     null,
+   LEN_ESPEC            nvarchar(100)                     null,
    
    constraint PK_LENGUAJE primary key (LEN_ID)
 );
@@ -121,7 +122,7 @@ create table LIBRERIA
    LIB_ID               int								 identity(1,1) not null,
    LEN_ID               int						         not null,
    LIB_NOMBRE           nvarchar(15)                     not null,
-   LIB_SOURCE           nvarchar(50)                     not null,
+   LIB_SOURCE           nvarchar(100)                     not null,
 
    constraint PK_LIBRERIA primary key (LIB_ID),
    constraint FK_LIBRERIA_HACE_USO__LENGUAJE foreign key (LEN_ID) references LENGUAJE (LEN_ID)
@@ -129,7 +130,7 @@ create table LIBRERIA
 
 create table LIB_USAGE 
 (
-   LIB_ID               int			                     identity(1,1) not null,
+   LIB_ID               int			                     not null,
    SOL_ID               int						         not null,
    LIB_USAGEINDEX       int							     null,
 
