@@ -12,8 +12,8 @@ namespace Snippet2.DAL
     {
         private const string FILE_LOCATION = @"E:\DATA\CodeSynchro\Snippet2\Snippet2\Database\SnippetDB.mdf";
         private readonly string CONNECTION_STR = @"Data Source=.\SQLEXPRESS;AttachDbFilename=" + FILE_LOCATION + ";User Instance=True";
-        //private const string CONNECTION = @"Data Source=.\SQLEXPRESS;AttachDbFilename=E:\DATA\CodeSynchro\Snippet2\Snippet2\Database\SnippetDB.mdf;Integrated Security=True;User Instance=True";
-        private const string CONNECTION = @"Data Source=.\SQLEXPRESS;AttachDbFilename=F:\DATA\CodeSynchro\Snippet2\Snippet2\Database\SnippetDB.mdf;Integrated Security=True;User Instance=True";
+        private const string CONNECTION = @"Data Source=.\SQLEXPRESS;AttachDbFilename=E:\DATA\CodeSynchro\Snippet2\Snippet2\Database\SnippetDB.mdf;Integrated Security=True;User Instance=True";
+        //private const string CONNECTION = @"Data Source=.\SQLEXPRESS;AttachDbFilename=F:\DATA\CodeSynchro\Snippet2\Snippet2\Database\SnippetDB.mdf;Integrated Security=True;User Instance=True";
 
         internal static SqlConnection Connection;
 

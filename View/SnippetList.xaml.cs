@@ -11,6 +11,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Snippet2.Model;
+
 namespace Snippet2
 {
 	/// <summary>

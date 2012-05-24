@@ -79,7 +79,10 @@
     <Compile Include="Controls\SnippetList.xaml.cs">
       <DependentUpon>SnippetList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DBCategoriaDataContext.cs" />
     <Compile Include="DAL\DBConnecter.cs" />
+    <Compile Include="DAL\DBDataContext.cs" />
+    <Compile Include="DAL\DBKeywordDataContext.cs" />
     <Compile Include="DAL\DBSnippetContext.cs" />
     <Compile Include="Database\SnippetDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -87,12 +90,20 @@
       <DependentUpon>SnippetDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="EditingWay.cs" />
+    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="Model\Codigo.cs" />
+    <Compile Include="Model\Desarrollador.cs" />
+    <Compile Include="Model\Keyword.cs" />
+    <Compile Include="Model\Lenguaje.cs" />
+    <Compile Include="Model\Libreria.cs" />
+    <Compile Include="Model\Tecnologia.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Snippet.cs" />
+    <Compile Include="Model\Snippet.cs" />
+    <Compile Include="Model\Solucion.cs" />
     <Page Include="Controls\SnippetEdit.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +124,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Metro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

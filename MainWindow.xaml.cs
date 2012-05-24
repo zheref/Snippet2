@@ -13,6 +13,7 @@ using System.Data;
 using System.Data.SqlClient;
 
 using Snippet2.DAL;
+using Snippet2.Model;
 
 namespace Snippet2
 {
@@ -34,6 +35,9 @@ namespace Snippet2
 			Refresh();
 		}
 
+        /// <summary>
+        /// Actualiza y muestra la lista de Snippets
+        /// </summary>
 		private void Refresh()
 		{
 			grdContainer.Children.Clear();
@@ -43,20 +47,25 @@ namespace Snippet2
 			};
 			list.Actualizar += new EventHandler<SnippetEventArgs>(btnActualizar_Click);
 			list.Eliminar += new EventHandler<SnippetEventArgs>(btnEliminar_Click);
-			grdContainer.Children.Add(list);
+            grdContainer.Children.Add(list);
+            
 		}
 
-        private void Search(string key)
-        {
-            grdContainer.Children.Clear();
-            SnippetList list = new SnippetList()
-            {
-                Snippets = context.Select(key)
-            };
-            list.Actualizar += new EventHandler<SnippetEventArgs>(btnActualizar_Click);
-            list.Eliminar += new EventHandler<SnippetEventArgs>(btnEliminar_Click);
-            grdContainer.Children.Add(list);
-        }
+		/// <summary>
+		/// Busca basado en la palabra clave pasada como parametro
+		/// </summary>
+		/// <param name="key"></param>
+		private void Search(string key)
+		{
+			grdContainer.Children.Clear();
+			SnippetList list = new SnippetList()
+			{
+				Snippets = context.Select(key)
+			};
+			list.Actualizar += new EventHandler<SnippetEventArgs>(btnActualizar_Click);
+			list.Eliminar += new EventHandler<SnippetEventArgs>(btnEliminar_Click);
+			grdContainer.Children.Add(list);
+		}
 
 		private void btnActualizar_Click(object sender, SnippetEventArgs args)
 		{
@@ -100,9 +109,9 @@ namespace Snippet2
 			Refresh();
 		}
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-            Search(txtKeywordsToSearch.Text);
-        }
+		private void btnBuscar_Click(object sender, RoutedEventArgs e)
+		{
+			Search(txtKeywordsToSearch.Text);
+		}
 	}
 }

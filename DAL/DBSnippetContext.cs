@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 
+using Snippet2.Model;
+
 namespace Snippet2.DAL
 {
-    public class DBSnippetContext
+    public class DBSnippetContext : DBDataContext<Snippet>
     {
-        public int Insert(Snippet snippet)
+        public override int Insert(Snippet snippet)
         {
             string strquery = @"insert into SNIPPET (SNI_NOMBRE, SNI_DESCRIP, SNI_FECHA, SNI_ESTADO)
                                 values (
@@ -22,7 +24,7 @@ namespace Snippet2.DAL
             return 0;
         }
 
-        public List<Snippet> SelectAll()
+        public override List<Snippet> SelectAll()
         {
             string strquery = @"select * from SNIPPET";
             SqlCommand cmd = new SqlCommand(strquery, DBConnecter.Connection);
@@ -45,7 +47,7 @@ namespace Snippet2.DAL
             return results.ToList<Snippet>();
         }
 
-        public void Delete(Snippet snippet)
+        public override void Delete(Snippet snippet)
         {
             string strquery = @"delete from SNIPPET
                                 where SNI_ID = " + snippet.ID + ";";
@@ -53,7 +55,7 @@ namespace Snippet2.DAL
             cmd.ExecuteScalar();
         }
 
-        public void Update(Snippet snippet)
+        public override void Update(Snippet snippet)
         {
             string strquery = @"update SNIPPET
                                 set SNI_NOMBRE = '" + snippet.Nombre + @"',
@@ -64,7 +66,7 @@ namespace Snippet2.DAL
             cmd.ExecuteScalar();
         }
 
-        internal List<Snippet> Select(string key)
+        internal override List<Snippet> Select(string key)
         {
             string strquery = @"select * from SNIPPET where SNI_DESCRIP like '%" + key + @"%';";
             SqlCommand cmd = new SqlCommand(strquery, DBConnecter.Connection);

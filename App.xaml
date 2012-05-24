@@ -5,5 +5,10 @@
 	StartupUri="MainWindow.xaml">
 	<Application.Resources>
 		<!-- Debe definir aquí los recursos en el ámbito del nivel de aplicación. -->
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="Metro.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

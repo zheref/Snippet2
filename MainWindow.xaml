@@ -6,7 +6,7 @@
 	Title="MainWindow"
 	Width="1300" Height="720" FontFamily="Segoe UI Light" FontSize="14">
 
-	<DockPanel x:Name="LayoutRoot">
+	<DockPanel x:Name="LayoutRoot" Background="Black">
 		<Menu Height="25" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI Light" DockPanel.Dock="Top">
 			<MenuItem Header="Archivo">
 				<MenuItem x:Name="mniNuevo" Header="Nuevo" Click="mniNuevo_Click" />
@@ -29,11 +29,16 @@
 				<Button x:Name="btnCargar" Content="Refrescar" Click="btnCargar_Click" />
 			</ToolBar>
 		</ToolBarTray>
-		<Grid Width="400" DockPanel.Dock="Left" Background="#FF007A2E" x:Name="grdSlider">
+		<Grid Width="350" DockPanel.Dock="Left" Background="#FF007A2E" x:Name="grdSlider">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="100" />
+				<RowDefinition Height="62" />
+				<RowDefinition Height="60" />
+				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<Label Content="Categorias" />
+			<Label Content="categorias" Style="{DynamicResource metroLabel}" Foreground="White" />
+			<StackPanel x:Name="stkCatTools" Orientation="Horizontal" Grid.Row="1">
+				<Button Content="Agregar" Height="50" Template="{DynamicResource metroButton}" Margin="5 5 5 5"/>
+			</StackPanel>
 		</Grid>
 		<Grid DockPanel.Dock="Bottom" Height="80">
 			

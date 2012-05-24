@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Controls;
 
+using Snippet2.Model;
+
 namespace Snippet2
 {
 	/// <summary>
