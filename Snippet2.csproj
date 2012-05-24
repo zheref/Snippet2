@@ -73,10 +73,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\SnippetEdit.xaml.cs">
+    <Compile Include="ViewModel\ListarCategoriasViewModel.cs" />
+    <Compile Include="View\SnippetView.xaml.cs">
+      <DependentUpon>SnippetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IOperationNotifier.cs" />
+    <Compile Include="View\SnippetEdit.xaml.cs">
       <DependentUpon>SnippetEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SnippetList.xaml.cs">
+    <Compile Include="View\SnippetList.xaml.cs">
       <DependentUpon>SnippetList.xaml</DependentUpon>
     </Compile>
     <Compile Include="DAL\DBCategoriaDataContext.cs" />
@@ -104,11 +109,15 @@
     </Compile>
     <Compile Include="Model\Snippet.cs" />
     <Compile Include="Model\Solucion.cs" />
-    <Page Include="Controls\SnippetEdit.xaml">
+    <Page Include="View\SnippetView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Controls\SnippetList.xaml">
+    <Page Include="View\SnippetEdit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SnippetList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -124,7 +133,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Metro.xaml">
+    <Page Include="Resources\Metro.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -190,6 +199,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\queries.sql" />
     <Content Include="Database\SnippetDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -197,13 +207,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>SnippetDB.mdf</DependentUpon>
     </Content>
-    <Content Include="script_base_de_datos %281%29.sql" />
-    <Content Include="script_drops.sql" />
-    <Content Include="script_inserts.sql" />
+    <Content Include="Database\script_base_de_datos %281%29.sql" />
+    <Content Include="Database\script_drops.sql" />
+    <Content Include="Database\script_inserts.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	     Other similar extension points exist, see Microsoft.Common.targets.

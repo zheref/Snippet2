@@ -1,0 +1,21 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Snippet2.SnippetView"
+	x:Name="UserControl"
+	d:DesignWidth="640" Height="368">
+
+	<Grid x:Name="LayoutRoot">
+		<Label Content="Datos del Snippet" Height="64" Margin="8,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="624" Style="{DynamicResource metroLabel}"/>
+		<Label Content="Nombre" HorizontalAlignment="Left" Margin="8,72,0,0" VerticalAlignment="Top" Style="{DynamicResource metroLabel}" FontSize="18" />
+		<Label Content="Descripción" HorizontalAlignment="Left" Margin="8,107.94,0,0" VerticalAlignment="Top" Style="{DynamicResource metroLabel}" FontSize="18"/>
+		<TextBox x:Name="txtName" Margin="104,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="356" Style="{DynamicResource metroTextBox}"/>
+		<TextBox x:Name="txtDescription" Margin="104,107.94,0,164" TextWrapping="Wrap" HorizontalAlignment="Left" Width="356" Style="{DynamicResource metroTextBox}" VerticalContentAlignment="Top"/>
+		<Button x:Name="btnApply" Content="Aplicar Categoria" HorizontalAlignment="Right" Margin="0,308,8,0" Width="168" VerticalAlignment="Top" Template="{DynamicResource metroButton}" Height="48" Click="btnApply_Click"/>
+		<ListBox x:Name="lstCategoriesSni" Margin="104,208,180,12"/>
+		<ListBox x:Name="lstCategories" Margin="0,74,8,64" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Right" Width="168"/>
+	</Grid>
+</UserControl>

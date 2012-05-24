@@ -88,5 +88,44 @@ namespace Snippet2.DAL
             reader.Close();
             return results.ToList<Snippet>();
         }
+
+        internal List<Snippet> Select(Categoria cat)
+        {
+            string strquery = @"SELECT        SNIPPET.SNI_ID, SNIPPET.SNI_NOMBRE, SNIPPET.SNI_DESCRIP, SNIPPET.SNI_FECHA, SNIPPET.SNI_ESTADO, CATEGORIA.CAT_NOMBRE
+FROM            SNIPPET CROSS JOIN
+                         CATEGORIA_DETAIL INNER JOIN
+                         CATEGORIA ON CATEGORIA_DETAIL.SNI_ID = SNIPPET.SNI_ID AND CATEGORIA_DETAIL.CAT_ID = CATEGORIA.CAT_ID
+WHERE        (CATEGORIA.CAT_ID = " + cat.ID.ToString() + @")";
+            SqlCommand cmd = new SqlCommand(strquery, DBConnecter.Connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<Snippet> results = new List<Snippet>();
+            if (reader.HasRows)
+                while (reader.Read())
+                {
+                    Snippet snip = new Snippet
+                    {
+                        ID = reader.GetInt32(0),
+                        Nombre = reader.GetString(1),
+                        Descripcion = reader.GetString(2)
+                    };
+                    results.Add(snip);
+                }
+            else
+                Console.WriteLine("No rows returned.");
+            reader.Close();
+            return results.ToList<Snippet>();
+        }
+
+        public int Insert(Snippet snippet, Categoria cat)
+        {
+            string strquery = @"insert into CATEGORIA_DETAIL (SNI_ID, CAT_ID)
+                                values (
+						                    " + snippet.ID + @", 
+						                    " + cat.ID + @"
+					                   );";
+            SqlCommand cmd = new SqlCommand(strquery, DBConnecter.Connection);
+            cmd.ExecuteScalar();
+            return 0;
+        }
     }
 }

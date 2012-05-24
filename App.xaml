@@ -7,7 +7,7 @@
 		<!-- Debe definir aquí los recursos en el ámbito del nivel de aplicación. -->
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
-				<ResourceDictionary Source="Metro.xaml"/>
+				<ResourceDictionary Source="Resources/Metro.xaml"/>
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>

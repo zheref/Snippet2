@@ -5,6 +5,7 @@ using System.Text;
 
 using System.Data;
 using System.Data.SqlClient;
+using Snippet2.View;
 
 namespace Snippet2.DAL
 {
@@ -24,6 +25,7 @@ namespace Snippet2.DAL
             try
             {
                 Connection.Open();
+                Console.WriteLine("Conexion abierta");
             }
             catch (Exception ex)
             {
@@ -34,6 +36,13 @@ namespace Snippet2.DAL
             {
                 connection.Close();
             }*/
+        }
+
+        public IOperationNotifier Notifier { private get; set; }
+
+        public DBConnecter(IOperationNotifier not)
+        {
+            Notifier = not;
         }
 
         public IEnumerable<string> Load(string query)

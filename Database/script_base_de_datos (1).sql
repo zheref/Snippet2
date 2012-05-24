@@ -14,7 +14,8 @@ create table SNIPPET
 	SNI_FECHA            datetime             not null,
 	SNI_ESTADO           nchar(2)             not null,
    
-   constraint PK_SNIPPET primary key (SNI_ID)
+   constraint PK_SNIPPET primary key (SNI_ID),
+   constraint ESTADO_CONSTRAINT check (SNI_ESTADO = 'A' or SNI_ESTADO = 'I')
 );
 
 create table KEYWORD_DETAIL 

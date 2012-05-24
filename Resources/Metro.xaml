@@ -86,13 +86,21 @@
 		<Setter Property="FontFamily" Value="{StaticResource metroFont}" />
 		<Setter Property="FontWeight" Value="{StaticResource metroWeight}" />
 		<Setter Property="FontSize" Value="40" />
+		<Setter Property="Foreground" Value="White" />
 	</Style>
 	
 	<Style x:Key="metroCaption" TargetType="TextBlock">
 		<Setter Property="FontFamily" Value="{StaticResource metroFont}" />
 		<Setter Property="FontWeight" Value="{StaticResource metroWeight}" />
 		<Setter Property="FontSize" Value="18" />
-		
+	</Style>
+	
+	<Style x:Key="metroTextBox" TargetType="TextBox">
+		<Setter Property="FontFamily" Value="{StaticResource metroFont}" />
+		<Setter Property="FontWeight" Value="{StaticResource metroWeight}" />
+		<Setter Property="FontSize" Value="18" />
+		<Setter Property="Opacity" Value="0.85" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
 	</Style>
 	
 	<Style x:Key="SliderButtonStyle" TargetType="{x:Type RepeatButton}">
@@ -135,6 +143,18 @@
       			</ControlTemplate>
 			</Setter.Value>
   		</Setter>
+	</Style>
+	
+	<Style TargetType="{x:Type ListBoxItem}">
+		<Setter Property="Height" Value="40" />
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="Padding" Value="10, 0, 5, 0" />
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#FF007A2E" />
+				<Setter Property="Foreground" Value="White" />
+			</Trigger>
+		</Style.Triggers>
 	</Style>
 	
 	<!-- ControlTemplates ********************************************************************************** -->

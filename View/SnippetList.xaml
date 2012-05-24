@@ -6,16 +6,18 @@
 	mc:Ignorable="d"
 	x:Class="Snippet2.SnippetList"
 	x:Name="UserControl"
-	Height="240" Width="Auto">
+	Height="Auto" Width="Auto">
 
-	<Grid x:Name="LayoutRoot" Margin="0,0,0,48">
+	<Grid x:Name="LayoutRoot">
 		<!--<DataGrid Margin="0,32,0,0" RenderTransformOrigin="-7.333,-2.462" d:LayoutOverrides="Width, Height"/>-->
-		<ListBox x:Name="lstSnippets">
+		<ListBox x:Name="lstSnippets" Margin="8,85.843,8,68">
 			
 		</ListBox>
         <!--<DataGrid x:Name="lstSnippets" />-->
-		<Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Right" Margin="0,0,8,-39.94" VerticalAlignment="Bottom" Width="75" Click="btnEliminar_Click" Template="{DynamicResource metroButton}" d:LayoutOverrides="VerticalAlignment" RenderTransformOrigin="0.253,0.556" />
-		<Button x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Right" Margin="0,0,87,-39.94" VerticalAlignment="Bottom" Width="89" Click="btnActualizar_Click" Template="{DynamicResource metroButton}" />
-		<Button x:Name="btnVer" Content="Ver" Margin="97,0,0,-39.94" VerticalAlignment="Bottom" Click="btnActualizar_Click" Template="{DynamicResource metroButton}" HorizontalAlignment="Left" Width="75" />
+		<Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="96" Click="btnEliminar_Click" Template="{DynamicResource metroButton}" d:LayoutOverrides="VerticalAlignment" RenderTransformOrigin="0.253,0.556" />
+		<Button x:Name="btnActualizar" Content="Actualizar" HorizontalAlignment="Right" Margin="0,0,108,8" VerticalAlignment="Bottom" Width="108" Click="btnActualizar_Click" Template="{DynamicResource metroButton}" />
+		<Button x:Name="btnVer" Content="Ver" Margin="8,0,0,8" VerticalAlignment="Bottom" Click="btnVer_Click" Template="{DynamicResource metroButton}" HorizontalAlignment="Left" Width="104" />
+		<Label Content="snippets" Margin="8,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{DynamicResource metroLabel}" FontSize="48"/>
+		<Button x:Name="btnSolve" Content="Solucionar" Margin="116,0,0,8" VerticalAlignment="Bottom" Click="btnActualizar_Click" Template="{DynamicResource metroButton}" HorizontalAlignment="Left" Width="116" />
 	</Grid>
 </UserControl>

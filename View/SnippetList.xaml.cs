@@ -20,59 +20,71 @@ namespace Snippet2
 	/// </summary>
 	public partial class SnippetList : UserControl
 	{
-        List<Snippet> _snippets = new List<Snippet>();
+		List<Snippet> _snippets = new List<Snippet>();
 
-        public List<Snippet> Snippets
-        {
-            get { return _snippets; }
-            set 
-            {
-                _snippets = value;
-                Refresh();
-            }
-        }
+		public List<Snippet> Snippets
+		{
+			get { return _snippets; }
+			set 
+			{
+				_snippets = value;
+				Refresh();
+			}
+		}
 
-        private void Refresh()
-        {
-            lstSnippets.Items.Clear();
-            foreach (Snippet sni in _snippets)
-                lstSnippets.Items.Add(sni);
-        }
+		private void Refresh()
+		{
+			lstSnippets.Items.Clear();
+			foreach (Snippet sni in _snippets)
+				lstSnippets.Items.Add(sni);
+		}
 
-        public void AddSnippet(Snippet sni)
-        {
-            _snippets.Add(sni);
-            Refresh();
-        }
+		public void AddSnippet(Snippet sni)
+		{
+			_snippets.Add(sni);
+			Refresh();
+		}
 
-        public event EventHandler<SnippetEventArgs> Actualizar;
-        public event EventHandler<SnippetEventArgs> Eliminar;
+		public event EventHandler<SnippetEventArgs> Actualizar;
+		public event EventHandler<SnippetEventArgs> Eliminar;
+		public event EventHandler<SnippetEventArgs> Ver;
 
 		public SnippetList()
 		{
 			this.InitializeComponent();
 		}
 
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
-        {
-            Snippet selected = lstSnippets.SelectedItem as Snippet;
-            SnippetEventArgs args = new SnippetEventArgs
-            {
-                Result = selected
-            };
-            Eliminar(this, args);
-            Refresh();
-        }
+		private void btnEliminar_Click(object sender, RoutedEventArgs e)
+		{
+			Snippet selected = lstSnippets.SelectedItem as Snippet;
+			SnippetEventArgs args = new SnippetEventArgs
+			{
+				Result = selected
+			};
+			Eliminar(this, args);
+			Refresh();
+		}
 
-        private void btnActualizar_Click(object sender, RoutedEventArgs e)
-        {
-            Snippet selected = lstSnippets.SelectedItem as Snippet;
-            SnippetEventArgs args = new SnippetEventArgs
-            {
-                Result = selected
-            };
-            Actualizar(this, args);
-            Refresh();
-        }
+		private void btnActualizar_Click(object sender, RoutedEventArgs e)
+		{
+			Snippet selected = lstSnippets.SelectedItem as Snippet;
+			SnippetEventArgs args = new SnippetEventArgs
+			{
+				Result = selected
+			};
+			Actualizar(this, args);
+			Refresh();
+		}
+
+		private void btnVer_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+			Snippet selected = lstSnippets.SelectedItem as Snippet;
+			SnippetEventArgs args = new SnippetEventArgs
+			{
+				Result = selected
+			};
+			Ver(this, args);
+			Refresh();
+		}
 	}
 }
